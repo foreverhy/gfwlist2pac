@@ -770,6 +770,9 @@ for (var i = 0; i < rules.length; i++) {
 }
 
 function FindProxyForURL(url, host) {
+    if (host == undefined){
+        return direct;
+    }
     if (defaultMatcher.matchesAny(url, host) instanceof BlockingFilter) {
         return proxy;
     }

@@ -11,6 +11,9 @@ var hasOwnProperty = Object.hasOwnProperty;
 
 function FindProxyForURL(url, host) {
     var suffix;
+    if (host == undefined){
+        return direct;
+    }
     var pos = host.lastIndexOf('.');
     for (;;) {
         suffix = host.substring(pos + 1);
